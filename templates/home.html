@@ -1,0 +1,175 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Life Cycle Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+          /*this deal with header or nav bar of the page*/
+        .header {
+            overflow: hidden;
+            background-color: #f5f0f0;
+            padding: 15px 10px;
+            }
+
+        .header a {
+            float: left;
+            color: rgb(15, 2, 2);
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+            }
+
+        .header a:hover {
+            background-color: rgb(212, 204, 204);
+            color: black;
+            }
+
+        .header a.center {
+            font-size:32px;
+            background-color: rgb(3, 7, 15);
+            color: rgb(234, 221, 221);
+            }
+
+        .header-right {
+            float: right;
+            }
+            
+ 
+    </style>
+    
+</head>
+
+
+<body>
+
+    <!-- As a heading -->
+    <div class="header">
+        <a class="center"><b>BATTERY LIFE CYCLE PREDICTION</b></a>
+            <div class="header-right">
+                <a href="https://github.com/AravindChada/Battery-Life-Cycle-Prediction" style="font-size:40px" class="fa">&#xf09b;</a>
+            </div>
+        
+    <div>
+
+    <br><br><br>
+
+    <div class="container">
+        <form action="result" method="post">{% csrf_token %} 
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ambient_temperature (°C)</h5>
+                            <input type="number" placeholder="Enter ambient_temperature" name="ambient_temperature" id="ambient_temperature" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Voltage_measured (Volts)</h5>
+                            <input type="number" id="voltage_measured" name="voltage_measured" placeholder="Enter voltage_measured"  min="" max="" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Current_measured (Amps)</h5>
+                            <input type="number" placeholder="Enter current_measured" name="current_measured" id="current_measured"   min="",max=" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Temperature_measured (°C)</h5>
+                            <input type="number" id="temperature_measured" name="temperature_measured" placeholder="temperature_measured"  min="" max="" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Voltage_load (Volts)</h5>
+                            <input type="number" placeholder="Enter voltage_load" name="voltage_load" id="voltage_load"  min="" max="" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Current_load (Amps)</h5>
+                            <input type="number" id="current_load" name="current_load" placeholder="Enter current_load"  min="" max="" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Discharge_time (sec)</h5>
+                            <input type="number" id="time(sec)" name="time(sec)" placeholder="Enter time(sec)"  min="" max="" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+            <input type="submit" value="Submit for Prediction" text-align='center' class="btn btn-secondary">
+        </form>
+        <br>
+        <h3> {{ prediction_text }}</h3>
+
+        <br>
+
+    </div>
+
+</div class="footer">
+<p>©2023 Developed by </p>
+<br>
+<a href="https://www.linkedin.com/in/aravind-reddy-chada-899964124" style="color: black;"> Aravind Reddy Chada </a></p>
+</div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

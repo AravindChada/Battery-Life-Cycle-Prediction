@@ -1,0 +1,1 @@
+web gunicorn django_battery.wsgi:application --log-file -
